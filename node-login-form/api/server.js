@@ -14,7 +14,7 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.get("/test", (req, res) => {
+app.get("/", (req, res) => {
   res.json({ message: "Hello World" });
 });
 
