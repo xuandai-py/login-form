@@ -1,10 +1,14 @@
 import Cookies from "js-cookie";
 import React from "react";
 import { useNavigate } from "react-router-dom";
-
+import Spinner from './spinner';
 
 const Form = () => {
-  const server_path = import.meta.env.SERVER;
+  const envs = import.meta.env;
+  const server_path_local = envs.VITE_DEV_BASE_URL;
+  const server_path_prod = envs.VITE_PROD_BASE_URL;
+  const server_path = envs.VITE_ENV === 'development' ? server_path_local : server_path_prod
+
   const [formData, setFormData] = React.useState({
     username: '',
     password: '',
@@ -14,9 +18,13 @@ const Form = () => {
   const inputRefPassword = React.useRef(null);
 
   const [caps, setCaps] = React.useState(true);
+  const [isLoading, setIsLoading] = React.useState(false);
+
   const navigate = useNavigate();
 
-  const handleSubmit = (event) => {
+
+
+  const handleSubmit = async (event) => {
     event.preventDefault();
     const {username, password} = formData;
 
@@ -29,30 +37,41 @@ const Form = () => {
       }
       return;
     }
-    fetch(`${server_path}/login`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        username,
-        password,
-      }),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        if (data && data.tokens) {
-          // save token into cookie
-          Cookies.set("tokens", data.tokens, { expires: 7 });
-        }
-        alert(data.message);
-        navigate(`/profile`);
+
+    setIsLoading(true);
+      try {
+      const response = await fetch(`${server_path}/login`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ username, password }),
       });
+
+      if (!response.ok) {
+        throw new Error(`Login failed: ${response.statusText}`); 
+      }
+      await new Promise((resolve) => setTimeout(resolve, 500));
+      const data = await response.json();
+
+      if (data && data.tokens) {
+        Cookies.set("tokens", data.tokens, { expires: 7 });
+      }
+
+      alert(data.message); // Consider using a more user-friendly notification method (e.g., toast)
+      navigate("/profile");
+    } catch (error) {
+      // setError(error.message); // Set a user-friendly error message
+      alert('Something went wrong');
+      console.error('Something went wrong: ', error)
+    } finally {
+      setIsLoading(false);
+    }
+    
   };
 
-const handleChange = (event) => {
-  setFormData({...formData, [event.target.name]: event.target.value})
-}
+  const handleChange = (event) => {
+    setFormData({...formData, [event.target.name]: event.target.value})
+  }
+
   const handleCaps = (event) => {
     if (event.getModifierState("CapsLock")) {
       setCaps(false);
@@ -61,11 +80,16 @@ const handleChange = (event) => {
     }
   };
 
+  React.useEffect(() => {
+    // Focus username input on initial form render
+    inputRefUsername.current.focus();
+  }, []); 
+
   return (
     <form
       id="form"
       className="form form-login"
-      onSubmit={(e) => handleSubmit(e)}
+      onSubmit={handleSubmit}
     >
       <div className="field">
         <input
@@ -99,7 +123,7 @@ const handleChange = (event) => {
          <div className="pass-link" >
           {
             caps ?
-             <div class="vertical-divider"></div>
+             <div className="vertical-divider"></div>
             :
             <span className="span-info" hidden={caps}>
               CapLocks is on!!!
@@ -108,7 +132,7 @@ const handleChange = (event) => {
         </div>
       </div>
 
-      <button type="submit" className="btn btn-submit">Submit</button>
+      <button type="submit" className="btn btn-submit" disabled={isLoading}>Submit {isLoading && <Spinner />}</button>
     </form>
   );
 };

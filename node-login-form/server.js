@@ -12,12 +12,13 @@ const app = express();
 
 
 var corsOptions = {
-    origin: 'https://react-form.daidesu.dev',
+    origin: ['https://react-form.daidesu.dev'],
+    // origin: 'http://localhost:5173',
   optionsSuccessStatus: 200 
 };
 
-
 app.use(cors(corsOptions));
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -25,7 +26,7 @@ app.get("/", (req, res) => {
   res.json({ message: "Hello World" });
 });
 
-app.post("/login", async (req, res) => {
+app.post("/login",  async (req, res) => {
   try {
     const { username, password } = req.body;
     if (!username || !password) {
@@ -67,6 +68,6 @@ app.get("/logout", (req, res) => {
   res.clearCookie("jwt", { httpOnly: true, sameSite: "Strict", secure: true });
   res.status(200).json({ message: "Logout successful" });
 });
+app.listen(3000, () => console.log(`Server is running on port: ${PORT}`));
 
-module.exports = app;
-// app.listen(PORT || 3000, () => console.log(`Server is running on port: ${PORT}`));
+// module.exports = app;
