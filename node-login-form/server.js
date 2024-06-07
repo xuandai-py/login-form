@@ -10,7 +10,14 @@ const PSEUDO_PASSWORD = "admin";
 
 const app = express();
 
-app.use(cors());
+
+var corsOptions = {
+    origin: 'https://react-form.daidesu.dev',
+  optionsSuccessStatus: 200 
+};
+
+
+app.use(cors(corsOptions));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 

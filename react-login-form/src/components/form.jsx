@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 
 const Form = () => {
-
+  const server_path = import.meta.env.SERVER;
   const [formData, setFormData] = React.useState({
     username: '',
     password: '',
@@ -29,7 +29,7 @@ const Form = () => {
       }
       return;
     }
-    fetch("http://localhost:3000/login", {
+    fetch(`${server_path}/login`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
