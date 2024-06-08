@@ -13,7 +13,7 @@ function Login() {
         <div className="content">
             <div className="pass-link" >
              View the source at: 
-               <a href="https://github.com/xuandai-py/react-login-form.git" target="_blank">Github</a>
+               <a href="https://github.com/xuandai-py/login-form.git" target="_blank">Github</a>
             </div>
          </div>
         

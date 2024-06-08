@@ -137,11 +137,11 @@ form .content{
   align-items: center;
   justify-content: space-around;
 }
-form .content .checkbox{
+/*form .content .checkbox{
   display: flex;
   align-items: center;
   justify-content: center;
-}
+}*/
 form .content input{
   width: 15px;s
   height: 15px;
@@ -200,7 +200,54 @@ nav .nav-ul{
 }
 
 .vertical-divider {
-  border-left: 1px solid #ddd; /* Adjust color as needed */
+  border-left: 1px solid #ddd; 
   height: 25px;
-  width: 2px; /* Width set to 0 for a thin line */
+  width: 2px; 
+}
+
+
+@media screen and (max-width: 768px) {
+
+  .wrapper {
+    margin: 20px auto;
+  }
+
+  .wrapper .title {
+    font-size: 28px;
+    line-height: 80px;
+  }
+
+  .wrapper form {
+    padding: 20px;
+  }
+
+  .wrapper form .field {
+    margin-top: 15px;
+  }
+
+  .wrapper form .field input {
+    font-size: 18px;
+  }
+
+  .btn-submit {
+    font-size: 20px;
+  }
+
+}
+
+@media screen and (max-width: 480px) {
+
+  .wrapper {
+    width: calc(100% - 20px); 
+  }
+
+  .wrapper .title {
+    font-size: 24px;
+    line-height: 60px;
+  }
+
+  .wrapper form .field input {
+    font-size: 16px;
+  }
+
 }
