@@ -56,10 +56,9 @@ const Form = () => {
         Cookies.set("tokens", data.tokens, { expires: 7 });
       }
 
-      alert(data.message); // Consider using a more user-friendly notification method (e.g., toast)
+      alert(data.message); 
       navigate("/profile");
     } catch (error) {
-      // setError(error.message); // Set a user-friendly error message
       alert('Something went wrong');
       console.error('Something went wrong: ', error)
     } finally {

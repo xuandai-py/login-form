@@ -9,6 +9,7 @@ import Login from "./pages/login";
 import "./index.css";
 import Home from "./pages/home";
 import RequireAuth from "./components/auth.guard";
+import NotFound from './pages/notfound'
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
@@ -25,6 +26,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           }
         />
         <Route path="/login" element={<Login />} />
+        <Route path='*' element={<NotFound />} />
       </Routes>
     </Router>
   </React.StrictMode>

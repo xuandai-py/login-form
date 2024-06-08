@@ -153,11 +153,11 @@ form .content input{
   padding-bottom: 10px;
 }
 
-form .btn-submit {
+.btn-submit {
   width: 100%;
   color: #0fe5e5;
   background-color: #08182F;
-  border: none;
+  border:   border: 1px  solid #0fe5e5;;
   font-size: 24px;
   font-weight: 500;
   cursor: pointer;
