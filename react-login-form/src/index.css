@@ -116,9 +116,9 @@ button:focus-visible {
   outline: none;
   font-size: 20px;
   font-weight: bolder;
-/*  padding-left: 20px;*/
+padding: 0;
 text-align: center;
-  border: 1px solid lightgrey;
+  
   border-radius: 25px;
   transition: all 0.3s ease;
   background-color: #08182F;
@@ -137,11 +137,7 @@ form .content{
   align-items: center;
   justify-content: space-around;
 }
-/*form .content .checkbox{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}*/
+
 form .content input{
   width: 15px;s
   height: 15px;
