@@ -1,12 +1,13 @@
 import Cookies from "js-cookie";
 import { useNavigate } from "react-router-dom";
 // import Heading from "../components/heading";
+import Cv from "../components/cv/cv";
 
 const Home = () => {
   return (
     <div className="home">
       <Nav />
-      <iframe src="https://www.daidesu.dev/" width="100%" height="90%" style={{border:'none'}} ></iframe>
+      <Cv />
     </div>
   );
 };

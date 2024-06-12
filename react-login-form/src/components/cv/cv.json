@@ -1,0 +1,96 @@
+{
+  "name": "bui nguyen xuan dai",
+  "role": "Full-Stack Developer",
+  "contact": {
+    "title": "contact",
+    "content": {
+      "email": "daidesu.dev@gmail.com",
+      "phone": "0373782161",
+      "address": "Cam Lam, Khanh Hoa",
+      "github": "https://github.com/xuandai-py",
+      "website": "https://wwww.xuandai.dev"
+    }
+  },
+  "projects": {
+    "title": "projects",
+    "content": [
+      {
+        "project_title": "Personal portfolio",
+        "project_description": "This project is a personal portfolio website built with Next.js and Chakra UI. It showcases all my relevant information includes side projects, bio, skills, and interests. It utilizes Next.js for server-rendered and static websites and Chakra UI for simple, modular, and accessible components.",
+        "project_url": "https://www.daidesu.dev"
+      },
+      {
+        "project_title": "GithubSpace",
+        "project_description": "This project utilizes the GitHub API along with swr/chart to fetch and display personal GitHub profiles in a user-friendly format. View starred repositories, projects, activities, monitor and analyze contributions, making it easier to manage and showcase user work.",
+        "project_url": "https://githubspace.daidesu.dev"
+      },
+      {
+        "project_title": "RadioBox",
+        "project_description": "This app combines the features of kanban boards with the added lofi-calm music and natural sound for a calming and focused work environment using youtube api.",
+        "project_url": "https://radiobox.daidesu.dev"
+      },
+      {
+        "project_title": "CodeEditor",
+        "project_description": "Editor is designed to transform and bundle JavaScript/HTML/CSS - React code into a live view in the browser. Quickly view the results of code changes. Suppose to work on more languages and bundler in future.",
+        "project_url": "https://github.com/xuandai-py/code-editor"
+      }
+    ]
+  },
+  "experience": {
+    "title": "work experience",
+    "content": [
+      {
+        "company": "PKH AJSC",
+        "position": "Java/Spring developer",
+        "location": "HCM",
+        "duration": "Jun 2020 - Nov 2020",
+        "work_responsibilities": [
+          "Performed quality tests on various sites to ensure cross-browser compatibility and mobile responsiveness",
+          "Work alongside with other local agency to do research, development testing environment.",
+          "Develop internal plugin reader for company product - integrate zalo third party api for user interaction."
+        ]
+      }
+    ]
+  },
+
+  "education": {
+    "title": "education",
+    "content": [
+      {
+        "degree": "associate degree ",
+        "school": "college of FPT Polytechnic",
+        "major": "software development"
+      }
+    ]
+  },
+
+  "skills": {
+    "title": "skills",
+    "content": [
+      {
+        "title": "programming languages",
+        "skill_list": ["JavaScript-node, TypeScript", "Java"]
+      },
+      {
+        "title": "libraries & frameworks",
+        "skill_list": [
+          "Reactjs, Express, Nextjs, Spring, Redux, Zustand",
+          "Postgres, MongoDB, SQLServer",
+          "ChakraUI, MUI, Tailwind"
+        ]
+      },
+      {
+        "title": "tools & platforms",
+        "skill_list": ["Git, Docker, Vercel"]
+      }
+    ]
+  },
+  "other": {
+    "title": "other",
+    "content": [
+      "Languages: Vietnamese (native) - English (B2-upper intermediate).",
+      "Interests: Hands-on DIY projects, Iot, drones, guitar, etc.",
+      "Open-minded - willing to work in other fields."
+    ]
+  }
+}

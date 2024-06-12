@@ -185,6 +185,9 @@ form .signup-link a:hover{
 nav {
   margin: 0;
   padding: 0;
+  border-bottom: 1px solid #4287f5;
+  box-shadow: 0px 15px 20px rgba(0,0,0,0.1);
+
 }
 nav .nav-ul{
   display: flex;

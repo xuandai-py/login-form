@@ -1,0 +1,159 @@
+:root {
+  --gap: 1rem;
+  --margin-bottom: 2rem;
+  --flex-right: 1.3;
+  --flex-left: 3;
+  --gap-inner-block: 5px;
+  --gap-outer-block: 30px;
+  --font-size-490px: 15px
+}
+.block-section {
+  margin-bottom: 35px;
+}
+.blog-section-content {
+}
+
+.cvh {
+  margin: 10px 0;
+}
+.cvh1 {
+  text-transform: capitalize;
+}
+.cvh2 {
+  /* font-size: 25px; */
+}
+.cvh3 {
+  margin: 0;
+}
+.cvh4 {
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #4287f5;
+  font-size: small;
+}
+.cvh5 {
+}
+
+.cv-wrapper {
+  padding: 2rem 1rem;
+  /* border: 1px solid red; */
+}
+/* info */
+.info-section {
+  display: flex;
+  flex-direction: row;
+  gap: var(--gap);
+  /* border: 1px solid green; */
+  text-align: left;
+  margin-bottom: var(--margin-bottom);
+}
+
+.side-left {
+  flex: var(--flex-left);
+  /* border: 1px solid green; */
+}
+.side-right {
+  flex: var(--flex-right);
+}
+
+.contact {
+  display: flex;
+  flex-direction: column;
+}
+
+/* content */
+.cv-content {
+  display: flex;
+  flex-direction: row;
+  text-align: left;
+  gap: var(--gap);
+  /* border: 1px solid blue; */
+}
+
+/* project */
+
+.project-content-heading {
+  display: flex;
+  flex-direction: row;
+  gap: var(--gap);
+}
+
+.project-content {
+  margin-bottom: 30px;
+}
+
+.project-content p {
+  margin: 5px 0;
+}
+
+/* skills */
+
+.skill-content {
+}
+.block-list ul {
+  padding-inline-start: 20px;
+  margin-block-start: 0.5em;
+}
+
+.cvh4-normal {
+  text-transform: capitalize;
+  margin: 5px 0;
+}
+
+/* education */
+.education-content {
+  text-transform: capitalize;
+}
+
+@media screen and (max-width: 768px) {
+  .cvh1 {
+    font-size: 45px;
+  }
+  /* info */
+  .info-section {
+    flex-direction: column;
+  }
+
+  /* content */
+  .cv-content {
+    flex-direction: column;
+  }
+
+  /* project */
+}
+
+@media screen and (max-width: 490px) {
+  .cvh1 {
+    font-size: 35px;
+  }
+
+  .contact .contact-item {
+    font-size: var(--font-size-490px);
+  }
+  .project-content-heading {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .project-content {
+    margin-bottom: 40px;
+  }
+
+  .project-content p {
+    font-size: var(--font-size-490px);
+
+  }
+  .experience-content li {
+    font-size: var(--font-size-490px);
+
+  }
+  .skill-content li {
+    font-size: var(--font-size-490px);
+
+  }
+
+  .education-content .education-school {
+    font-size: var(--font-size-490px);
+  }
+
+}
