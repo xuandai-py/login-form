@@ -12,8 +12,8 @@ const app = express();
 
 
 var corsOptions = {
-    // origin: ['https://react-form.daidesu.dev'],
-    origin: 'http://localhost:5173',
+    origin: ['https://react-form.daidesu.dev'],
+    //origin: 'http://localhost:5173',
   optionsSuccessStatus: 200 
 };
 
